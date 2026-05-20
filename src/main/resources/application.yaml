@@ -18,3 +18,4 @@ spring:
   sql:
     init: {mode: always}
   flyway: {enabled: true, locations: 'classpath:db/migration'}
+  liquibase: {change-log: 'classpath:db/changelog/db.changelog-master.yaml'}
