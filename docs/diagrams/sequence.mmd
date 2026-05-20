@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Client
+    participant UserController
+    participant UserService
+    participant UserRepository
+
+    Client->>UserController: POST /users/register
+    UserController->>UserService: registerUser(userDetails)
+    UserService->>UserRepository: save(user)
+    UserRepository-->>UserService: user saved
+    UserService-->>UserController: registration success
+    UserController-->>Client: response with user ID
