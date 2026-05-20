@@ -21,6 +21,8 @@ public class User {
 
     private String phoneNumber;
 
+    private String address;
+
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
