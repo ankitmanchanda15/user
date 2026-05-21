@@ -40,4 +40,25 @@ public class UserServiceImpl implements UserService {
         response.setPhoneNumber(user.getPhoneNumber());
         return response;
     }
-}
+
+
+public UserDto registerUser(UserRegistrationRequest request) {
+        User user = new User();
+        user.setFirstName(request.getFirstName());
+        user.setLastName(request.getLastName());
+        user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword());
+        user.setPhoneNumber(request.getPhoneNumber());
+
+        userRepository.save(user);
+
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        userDto.setEmail(user.getEmail());
+        userDto.setPhoneNumber(user.getPhoneNumber());
+
+        return userDto;
+    }
+}}
