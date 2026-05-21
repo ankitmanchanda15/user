@@ -18,3 +18,9 @@ spring:
   sql:
     init: {mode: always}
   flyway: {enabled: true, locations: 'classpath:db/migration'}
+  security:
+    oauth2:
+      resourceserver:
+        jwt: {issuer-uri: 'http://localhost:8080/realms/master'}
+keycloak: {url: 'http://localhost:8080', realm: master, clientid: car-sticker, username: admin,
+  password: admin, clientsecret: XWUw0Z5CC9BsJtvrsgBMFS1YARBU01SY}
